@@ -7,25 +7,38 @@
   </head>
   <body>
     <svg xmlns="http://www.w3.org/2000/svg" width="100vw" height="100vh">
-      <symbol id="spade">
-      </symbol>
-      <symbol id="heart">
-      </symbol>
-      <symbol id="club">
-      </symbol>
-      <symbol id="diamond">
-      </symbol>
-      <symbol id="card">
-        <rect class="cardstock" />
-        <g class="back">
-            <rect class="border" />
-        </g>
-        <g class="front">
-        </g>
-      </symbol>
+      <defs>
+        <filter id="shadow">
+          <feDropShadow dx="0" dy="0" stdDeviation="1 5" />
+        </filter>
+        <symbol id="spade">
+          <circle cx="50" cy="50" r="50" />
+        </symbol>
+        <symbol id="heart">
+          <circle cx="50" cy="50" r="50" />
+        </symbol>
+        <symbol id="club">
+          <circle cx="50" cy="50" r="50" />
+        </symbol>
+        <symbol id="diamond">
+          <circle cx="50" cy="50" r="50" />
+        </symbol>
+        <symbol id="card">
+          <rect class="cardstock" />
+          <g class="card-face">
+            <rect class="card-border" />
+            <text>8</text>
+            <use xlink:href="#heart" />
+          </g>
+          <g class="card-back">
+            <rect class="card-border" />
+            <circle cx="20" cy="20" r="20" />
+          </g>
+        </symbol>
+      </defs>
 
-      <use xlink:href="#card" x="20vw" y="10vw" />
-      <use xlink:href="#card" />
+      <use xlink:href="#card" x="20vw" y="10vw" data-face="down" data-suit="spade" />
+      <use xlink:href="#card" x="20vw" y="15vw" data-face="up" data-suit="heart" data-value="8" />
     </svg>
   </body>
 </html>

@@ -1,10 +1,19 @@
+@namespace xlink 'http://www.w3.org/1999/xlink';
+
 * {
+  /* colors */
   --color-background: hsl(0,0%,0%);
   --color-cardstock: hsl(0,0%,10%);
-  --color-card-stroke: hsl(0,0%,20%);
+  --color-card-back: hsl(0,0%,20%);
+  --color-spade: hsl(190, 100%, 40%);
+  --color-heart: hsl(32, 100%, 45%);
+  --color-club: hsl(190, 100%, 40%);
+  --color-diamond: hsl(32, 100%, 45%);
 
+  /* card dimensions */
   --card-width: 12.5vw;
-  --card-height: calc(var(--card-width) * 7/5);
+  --card-aspect-ratio: 7/5;
+  --card-height: calc(var(--card-width) * var(--card-aspect-ratio));
   --card-round: calc(var(--card-width) / 8);
   --stroke-width: calc(var(--card-width) / 40);
 }
@@ -19,32 +28,77 @@ body {
   background-color: var(--color-background);
 }
 
+svg * {
+  overflow: visible;
+  user-select: none;
+}
+
+use[xlink|href="#card"] {
+  width: var(--card-width);
+  height: var(--card-height);
+  cursor: grab;
+
+  --color-card-suit: var(--color-card-back); /* set suit color nuetral for when suit is unknown */
+}
+use[xlink|href="#card"]:active {
+  cursor: grabbing;
+}
+
+use[xlink|href="#card"][data-face="down"] {
+  --display-face: none;
+  --display-back: initial;
+}
+use[xlink|href="#card"][data-face="up"] {
+  --display-face: initial;
+  --display-back: none;
+}
+
+use[xlink|href="#card"][data-suit="spade"] {
+  --color-card-suit: var(--color-spade);
+}
+use[xlink|href="#card"][data-suit="heart"] {
+  --color-card-suit: var(--color-heart);
+}
+use[xlink|href="#card"][data-suit="club"] {
+  --color-card-suit: var(--color-club);
+}
+use[xlink|href="#card"][data-suit="diamond"] {
+  --color-card-suit: var(--color-diamond);
+}
+
+use[xlink|href="#card"][data-value="8"] {
+
+}
+
+#card {
+
+}
+
 .cardstock {
   width: var(--card-width);
   height: var(--card-height);
   rx: var(--card-round);
   fill: var(--color-cardstock);
+  stroke: none;
 
-  cursor: grab;
+  filter: url(#shadow);
 }
-
-.cardstock:hover {
-  fill: red;
-}
-
-.cardstock:active {
-  cursor: grabbing;
-}
-
-.border {
-  fill: none;
-  stroke: var(--color-card-stroke);
-  stroke-width: var(--stroke-width);
+.card-border {
   width: calc(var(--card-width) - var(--stroke-width));
   height: calc(var(--card-height) - var(--stroke-width));
   rx: calc(var(--card-round) - (var(--stroke-width) / 2));
   x: calc(var(--stroke-width) / 2);
   y: calc(var(--stroke-width) / 2);
-
-  pointer-events: none;
+  stroke-width: var(--stroke-width);
+  fill: none;
+}
+.card-face {
+  display: var(--display-face);
+  fill: var(--color-card-suit);
+  stroke: var(--color-card-suit);
+}
+.card-back {
+  display: var(--display-back);
+  fill: var(--color-card-back);
+  stroke: var(--color-card-back);
 }
