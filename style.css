@@ -1,0 +1,50 @@
+* {
+  --color-background: hsl(0,0%,0%);
+  --color-cardstock: hsl(0,0%,10%);
+  --color-card-stroke: hsl(0,0%,20%);
+
+  --card-width: 12.5vw;
+  --card-height: calc(var(--card-width) * 7/5);
+  --card-round: calc(var(--card-width) / 8);
+  --stroke-width: calc(var(--card-width) / 40);
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  background-color: var(--color-background);
+}
+
+.cardstock {
+  width: var(--card-width);
+  height: var(--card-height);
+  rx: var(--card-round);
+  fill: var(--color-cardstock);
+
+  cursor: grab;
+}
+
+.cardstock:hover {
+  fill: red;
+}
+
+.cardstock:active {
+  cursor: grabbing;
+}
+
+.border {
+  fill: none;
+  stroke: var(--color-card-stroke);
+  stroke-width: var(--stroke-width);
+  width: calc(var(--card-width) - var(--stroke-width));
+  height: calc(var(--card-height) - var(--stroke-width));
+  rx: calc(var(--card-round) - (var(--stroke-width) / 2));
+  x: calc(var(--stroke-width) / 2);
+  y: calc(var(--stroke-width) / 2);
+
+  pointer-events: none;
+}

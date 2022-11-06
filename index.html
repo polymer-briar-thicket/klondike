@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Klondike</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" width="100vw" height="100vh">
+      <symbol id="spade">
+      </symbol>
+      <symbol id="heart">
+      </symbol>
+      <symbol id="club">
+      </symbol>
+      <symbol id="diamond">
+      </symbol>
+      <symbol id="card">
+        <rect class="cardstock" />
+        <g class="back">
+            <rect class="border" />
+        </g>
+        <g class="front">
+        </g>
+      </symbol>
+
+      <use xlink:href="#card" x="20vw" y="10vw" />
+      <use xlink:href="#card" />
+    </svg>
+  </body>
+</html>
