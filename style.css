@@ -21,9 +21,9 @@
   --font-size-pip: 9.5vw;
 
   /* dimensions */
-  --cell-gap: 1vw;
+  --cell-gap: 0.7vw;
   --stroke-width: 0.3vw;
-  --card-round: 10%;
+  --card-round: 1.5vw;
 }
 
 html, body {
@@ -31,14 +31,17 @@ html, body {
   padding: 0;
   width: 100%;
   height: 100%;
-  color: white;
 }
-
 body {
   background-color: var(--color-background);
 }
-
+div {
+  margin: 0;
+  padding: 0;
+}
 svg, svg * {
+  margin: 0;
+  padding: 0;
   overflow: visible;
   user-select: none;
 }
@@ -46,21 +49,25 @@ text {
   text-anchor: start;
 }
 
-#cell-grid {
+#grid {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   gap: var(--cell-gap);
   padding: var(--cell-gap);
 }
 
-svg:has(use[href="#card"]) {
-  padding: calc(var(--stroke-width) / 2);
+.grid-cell {
   aspect-ratio: 5/7;
+}
+
+svg:has(use[href="#card"]) {
+  aspect-ratio: 5/7;
+  padding: calc(var(--stroke-width) / 2);
   cursor: grab;
   transition: transform 0.1s;
 }
 svg:has(use[href="#card"]):hover {
-  transform: scale(1.04);
+  transform: scale(1.05);
 }
 svg:has(use[href="#card"]):active {
   cursor: grabbing;
