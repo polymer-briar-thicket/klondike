@@ -18,8 +18,8 @@
   /* fonts */
   --font-family-text: "Noto Serif JP", serif;
   --font-family-suits: "Noto Serif JP", serif;
-  --font-size-index-value: 3vw;
-  --font-size-index-suit: 3vw;
+  --font-size-index-value: 3.5vw;
+  --font-size-index-suit: 3.5vw;
   --font-size-pip: 9.5vw;
 
   /* dimensions */
@@ -88,15 +88,17 @@ div {
   width: 30%;
   font-family: var(--font-family-text);
   font-size: var(--font-size-index-value);
+  line-height: 1.2;
 }
 .index-suit {
   position: absolute;
   right: 0;
   text-align: center;
-  width: 30%;
+  width: 32%;
   height: var(width);
   font-family: var(--font-family-suits);
   font-size: var(--font-size-index-suit);
+  line-height: 1.2;
 }
 .pip {
   position: absolute;
