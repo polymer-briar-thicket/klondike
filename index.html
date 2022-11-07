@@ -6,39 +6,102 @@
     <script src="main.js"></script>
   </head>
   <body>
-    <svg xmlns="http://www.w3.org/2000/svg" width="100vw" height="100vh">
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 70 70" preserveAspectRatio="xMidYMin slice">
       <defs>
+<!-- filters -->
         <filter id="shadow">
-          <feDropShadow dx="0" dy="0" stdDeviation="1 5" />
+          <feDropShadow dx="0" dy="0" stdDeviation="2 5" />
         </filter>
-        <symbol id="spade">
-          <circle cx="50" cy="50" r="50" />
+
+<!-- generic parts of card -->
+        <symbol id=cardstock>
+          <rect class="cardstock" width="50" height="70" rx="5" />
         </symbol>
-        <symbol id="heart">
-          <circle cx="50" cy="50" r="50" />
+        <symbol id=card-border>
+          <rect class="card-border" x="0.75" y="0.75" width="48.5" height="68.5" rx="4.25" stroke-width="1.5" />
         </symbol>
-        <symbol id="club">
-          <circle cx="50" cy="50" r="50" />
+
+<!-- suit symbols -->
+        <symbol id="spade" viewBox="-50 -50 100 100">
+          <circle r="50" />
         </symbol>
-        <symbol id="diamond">
-          <circle cx="50" cy="50" r="50" />
+        <symbol id="heart" viewBox="-50 -50 100 100">
+          <circle r="50" />
         </symbol>
-        <symbol id="card">
-          <rect class="cardstock" />
+        <symbol id="club" viewBox="-50 -50 100 100">
+          <circle r="50" />
+        </symbol>
+        <symbol id="diamond" viewBox="-50 -50 100 100">
+          <circle r="50" />
+        </symbol>
+
+<!-- card values -->
+        <symbol id=card-value-A><text>A</text></symbol>
+        <symbol id=card-value-2><text>2</text></symbol>
+        <symbol id=card-value-3><text>3</text></symbol>
+        <symbol id=card-value-4><text>4</text></symbol>
+        <symbol id=card-value-5><text>5</text></symbol>
+        <symbol id=card-value-6><text>6<text></symbol>
+        <symbol id=card-value-7><text>7<text></symbol>
+        <symbol id=card-value-8><text>8<text></symbol>
+        <symbol id=card-value-9><text>9<text></symbol>
+        <symbol id=card-value-10><text>10<text></symbol>
+        <symbol id=card-value-J><text>J<text></symbol>
+        <symbol id=card-value-Q><text>Q<text></symbol>
+        <symbol id=card-value-K><text>K<text></symbol>
+
+<!-- card -->
+        <symbol id="card" width="9.5" height="12.85" viewBox="25 0 50 70" stroke-alignment="inner">
+          <use href="#cardstock" />
           <g class="card-face">
-            <rect class="card-border" />
-            <text>8</text>
-            <use xlink:href="#heart" />
+            <use href="#card-border" />
+
+            <use href="#card-value-A" x="4" y="15" />
+            <use href="#card-value-2" x="4" y="15" />
+            <use href="#card-value-3" x="4" y="15" />
+            <use href="#card-value-4" x="4" y="15" />
+            <use href="#card-value-5" x="4" y="15" />
+            <use href="#card-value-6" x="4" y="15" />
+            <use href="#card-value-7" x="4" y="15" />
+            <use href="#card-value-8" x="4" y="15" />
+            <use href="#card-value-9" x="4" y="15" />
+            <use href="#card-value-10" x="4" y="15" />
+            <use href="#card-value-J" x="4" y="15" />
+            <use href="#card-value-Q" x="4" y="15" />
+            <use href="#card-value-K" x="4" y="15" />
+
+            <use href="#spade" x="35" y="-25" width="12" />
+            <use href="#heart" x="35" y="-25" width="12"/>
+            <use href="#club" x="35" y="-25" width="12" />
+            <use href="#diamond" x="35" y="-25" width="12" />
+
+            <use href="#spade" x="12" y="10" width="25" />
+            <use href="#heart" x="12" y="10" width="25"/>
+            <use href="#club" x="12" y="10" width="25" />
+            <use href="#diamond" x="12" y="10" width="25" />
           </g>
           <g class="card-back">
-            <rect class="card-border" />
-            <circle cx="20" cy="20" r="20" />
+            <use href="#card-border" />
+            <use href="#card-border" transform="rotate(4 25 35) translate(2.5 3.5) scale(0.9)" />
+            <use href="#card-border" transform="rotate(8 25 35) translate(5 7) scale(0.8)" />
+            <use href="#card-border" transform="rotate(12 25 35) translate(7.5 10.5) scale(0.7)" />
+            <use href="#card-border" transform="rotate(16 25 35) translate(10 14) scale(0.6)" />
+            <use href="#card-border" transform="rotate(20 25 35) translate(12.5 17.5) scale(0.5)" />
+            <use href="#card-border" transform="rotate(24 25 35) translate(15 21) scale(0.4)" />
+            <use href="#card-border" transform="rotate(28 25 35) translate(17.5 24.5) scale(0.3)" />
+            <use href="#card-border" transform="rotate(32 25 35) translate(20 28) scale(0.2)" />
+            <use href="#card-border" transform="rotate(36 25 35) translate(22.5 31.5) scale(0.1)" />
           </g>
         </symbol>
       </defs>
 
-      <use xlink:href="#card" x="20vw" y="10vw" data-face="down" data-suit="spade" />
-      <use xlink:href="#card" x="20vw" y="15vw" data-face="up" data-suit="heart" data-value="8" />
+      <use href="#card" x="5" y="0" data-face="up" data-suit="heart" data-value="A" />
+      <use href="#card" x="15" y="0" data-face="down" data-suit="spade" data-value="2" />
+      <use href="#card" x="25" y="0" data-face="down" data-suit="club" data-value="3" />
+      <use href="#card" x="35" y="0" data-face="down" data-suit="diamond" data-value="4" />
+      <use href="#card" x="45" y="0" data-face="down" data-suit="spade" data-value="5" />
+      <use href="#card" x="55" y="0" data-face="down" data-suit="heart" data-value="6" />
+      <use href="#card" x="65" y="0" data-face="down" data-suit="spade" data-value="7" />
     </svg>
   </body>
 </html>

@@ -1,27 +1,20 @@
-@namespace xlink 'http://www.w3.org/1999/xlink';
-
 * {
   /* colors */
   --color-background: hsl(0,0%,0%);
-  --color-cardstock: hsl(0,0%,10%);
+  --color-cardstock: hsl(0,0%,12%);
   --color-card-back: hsl(0,0%,20%);
   --color-spade: hsl(190, 100%, 40%);
   --color-heart: hsl(32, 100%, 45%);
   --color-club: hsl(190, 100%, 40%);
   --color-diamond: hsl(32, 100%, 45%);
-
-  /* card dimensions */
-  --card-width: 12.5vw;
-  --card-aspect-ratio: 7/5;
-  --card-height: calc(var(--card-width) * var(--card-aspect-ratio));
-  --card-round: calc(var(--card-width) / 8);
-  --stroke-width: calc(var(--card-width) / 40);
 }
 
 html, body {
   margin: 0;
   padding: 0;
+  width: 100%;
   height: 100%;
+  color: white;
 }
 
 body {
@@ -33,63 +26,157 @@ svg * {
   user-select: none;
 }
 
-use[xlink|href="#card"] {
-  width: var(--card-width);
-  height: var(--card-height);
-  cursor: grab;
-
-  --color-card-suit: var(--color-card-back); /* set suit color nuetral for when suit is unknown */
+use[href="#card"] {
+  /* set defaults */
+  --color-card-suit: var(--color-card-back);
+  --display-spade: none;
+  --display-heart: none;
+  --display-club: none;
+  --display-diamond: none;
+  --display-A: none;
+  --display-2: none;
+  --display-3: none;
+  --display-4: none;
+  --display-5: none;
+  --display-6: none;
+  --display-7: none;
+  --display-8: none;
+  --display-9: none;
+  --display-10: none;
+  --display-J: none;
+  --display-Q: none;
+  --display-K: none;
 }
-use[xlink|href="#card"]:active {
-  cursor: grabbing;
-}
 
-use[xlink|href="#card"][data-face="down"] {
+use[href="#card"][data-face="down"] {
   --display-face: none;
   --display-back: initial;
 }
-use[xlink|href="#card"][data-face="up"] {
+use[href="#card"][data-face="up"] {
+  cursor: grab;
   --display-face: initial;
   --display-back: none;
 }
+use[href="#card"][data-face="up"]:active {
+  cursor: grabbing;
+}
 
-use[xlink|href="#card"][data-suit="spade"] {
+use[href="#card"][data-suit="spade"] {
   --color-card-suit: var(--color-spade);
+  --display-spade: initial;
 }
-use[xlink|href="#card"][data-suit="heart"] {
+use[href="#card"][data-suit="heart"] {
   --color-card-suit: var(--color-heart);
+  --display-heart: initial;
 }
-use[xlink|href="#card"][data-suit="club"] {
+use[href="#card"][data-suit="club"] {
   --color-card-suit: var(--color-club);
+  --display-club: initial;
 }
-use[xlink|href="#card"][data-suit="diamond"] {
+use[href="#card"][data-suit="diamond"] {
   --color-card-suit: var(--color-diamond);
+  --display-diamond: initial;
 }
 
-use[xlink|href="#card"][data-value="8"] {
-
+use[href="#card"][data-value="A"] {
+  --display-A: initial;
+}
+use[href="#card"][data-value="2"] {
+  --display-2: initial;
+}
+use[href="#card"][data-value="3"] {
+  --display-3: initial;
+}
+use[href="#card"][data-value="4"] {
+  --display-4: initial;
+}
+use[href="#card"][data-value="5"] {
+  --display-5: initial;
+}
+use[href="#card"][data-value="6"] {
+  --display-6: initial;
+}
+use[href="#card"][data-value="7"] {
+  --display-7: initial;
+}
+use[href="#card"][data-value="8"] {
+  --display-8: initial;
+}
+use[href="#card"][data-value="9"] {
+  --display-9: initial;
+}
+use[href="#card"][data-value="10"] {
+  --display-10: initial;
+}
+use[href="#card"][data-value="J"] {
+  --display-J: initial;
+}
+use[href="#card"][data-value="Q"] {
+  --display-Q: initial;
+}
+use[href="#card"][data-value="K"] {
+  --display-K: initial;
 }
 
-#card {
+use[href="#spade"] {
+  display: var(--display-spade);
+}
+use[href="#heart"] {
+  display: var(--display-heart);
+}
+use[href="#club"] {
+  display: var(--display-club);
+}
+use[href="#diamond"] {
+  display: var(--display-diamond);
+}
 
+use[href="#card-value-A"] {
+  display: var(--display-A);
+}
+use[href="#card-value-2"] {
+  display: var(--display-2);
+}
+use[href="#card-value-3"] {
+  display: var(--display-3);
+}
+use[href="#card-value-4"] {
+  display: var(--display-4);
+}
+use[href="#card-value-5"] {
+  display: var(--display-5);
+}
+use[href="#card-value-6"] {
+  display: var(--display-6);
+}
+use[href="#card-value-7"] {
+  display: var(--display-7);
+}
+use[href="#card-value-8"] {
+  display: var(--display-8);
+}
+use[href="#card-value-9"] {
+  display: var(--display-9);
+}
+use[href="#card-value-10"] {
+  display: var(--display-10);
+}
+use[href="#card-value-J"] {
+  display: var(--display-J);
+}
+use[href="#card-value-Q"] {
+  display: var(--display-Q);
+}
+use[href="#card-value-K"] {
+  display: var(--display-K);
 }
 
 .cardstock {
-  width: var(--card-width);
-  height: var(--card-height);
-  rx: var(--card-round);
   fill: var(--color-cardstock);
   stroke: none;
-
   filter: url(#shadow);
 }
 .card-border {
-  width: calc(var(--card-width) - var(--stroke-width));
-  height: calc(var(--card-height) - var(--stroke-width));
-  rx: calc(var(--card-round) - (var(--stroke-width) / 2));
-  x: calc(var(--stroke-width) / 2);
-  y: calc(var(--stroke-width) / 2);
-  stroke-width: var(--stroke-width);
   fill: none;
 }
 .card-face {
