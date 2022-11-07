@@ -8,35 +8,30 @@
     <!-- ♠♥♣♦♤♡♧♢ -->
   </head>
   <body>
-    <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
-      <symbol id="card">
-        <rect id="cardstock" />
-        <g id="back">
-        </g>
-        <g id="front">
-          <text id="index-value" x="6%" y="2%">2</text>
-          <text id="index-suit" x="95.5%" y="3.5%">♥</text>
-          <text id="pip" x="50%" y="70%">♥</text>
-        </g>
-      </symbol>
-    </svg>
-
     <div id="grid">
-      <div class="grid-cell"><svg><use href="#card" /></svg></div>
-      <div class="grid-cell"><svg><use href="#card" /></svg></div>
-      <div class="grid-cell"><svg><use href="#card" /></svg></div>
-      <div class="grid-cell"><svg><use href="#card" /></svg></div>
-      <div class="grid-cell"><svg><use href="#card" /></svg></div>
-      <div class="grid-cell"><svg><use href="#card" /></svg></div>
-      <div class="grid-cell"><svg><use href="#card" /></svg></div>
+      <div class="card" data-suit="spade">
+        <div class="index-value">A</div>
+        <div class="index-suit">♠</div>
+        <div class="pip">♠</div>
+      </div>
+      <div class="card" data-suit="heart">
+        <div class="index-value">A</div>
+        <div class="index-suit">♥</div>
+        <div class="pip">♥</div>
+      </div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
 
-      <div class="grid-cell"><svg><use href="#card" /></svg></div>
-      <div class="grid-cell"></div>
-      <div class="grid-cell"></div>
-      <div class="grid-cell"></div>
-      <div class="grid-cell"></div>
-      <div class="grid-cell"></div>
-      <div class="grid-cell"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
     </div>
   </body>
 </html>
