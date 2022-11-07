@@ -48,8 +48,7 @@ text {
 
 #cell-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: auto auto;
+  grid-template-columns: repeat(7, 1fr);
   gap: var(--cell-gap);
   padding: var(--cell-gap);
 }
