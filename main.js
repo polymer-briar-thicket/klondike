@@ -1,13 +1,13 @@
-import Color from "/classes/Color.js";
-import Game from "/classes/Game.js"; // (cells[], cards[])
-import Suit from "/classes/Suit.js"; // (singular, plural, symbol_solid, symbol_outline, color)
-import Value from "/classes/Value.js"; // (singular, plural, rank, symbol)
-import Cell from "/classes/Cell.js"; // (border)
-import Stock from "/classes/Stock.js";
-import Waste from "/classes/Waste.js";
-import Foundation from "/classes/Foundation.js";
-import Tableau from "/classes/Tableau.js";
-import Card from "/classes/Card.js";
+import Color from "/klondike/classes/Color.js";
+import Game from "/klondike/classes/Game.js"; // (cells[], cards[])
+import Suit from "/klondike/classes/Suit.js"; // (singular, plural, symbol_solid, symbol_outline, color)
+import Value from "/klondike/classes/Value.js"; // (singular, plural, rank, symbol)
+import Cell from "/klondike/classes/Cell.js"; // (border)
+import Stock from "/klondike/classes/Stock.js";
+import Waste from "/klondike/classes/Waste.js";
+import Foundation from "/klondike/classes/Foundation.js";
+import Tableau from "/klondike/classes/Tableau.js";
+import Card from "/klondike/classes/Card.js";
 
 function PreventDefault(event) {
   event.preventDefault();
