@@ -1,3 +1,5 @@
+import Position3 from "./Position3.js";
+
 export default class Cell {
   constructor(border) {
     this.dom.border = border;

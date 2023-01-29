@@ -1,3 +1,5 @@
+import Position3 from "./Position3.js";
+
 export default class Card {
   constructor(suit, value) {
     this.suit = suit;
