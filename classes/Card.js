@@ -1,6 +1,3 @@
-import Position3 from "classes/Position3.js";
-import Vector2 from "classes/Vector2.js";
-
 export class Card {
   constructor(suit, value) {
     this.suit = suit;
