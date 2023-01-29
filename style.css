@@ -5,6 +5,7 @@
 
 * {
   box-sizing: border-box;
+  user-select: none;
 
   /* colors */
   --color-background: hsl(0,0%,0%);
@@ -26,7 +27,7 @@
   --column-quantity: 7;
   --cell-gap: 0.7vw;
   --card-width: calc((100vw - (var(--cell-gap) * (var(--column-quantity) + 1))) / var(--column-quantity));
-  --border-width: 0.4vw;
+  --border-width: 0.42vw;
   --card-round: 1.5vw;
 }
 
@@ -35,6 +36,7 @@ html, body {
   padding: 0;
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 body {
   background-color: var(--color-background);
@@ -45,15 +47,27 @@ div {
 }
 
 #grid {
-  position: relative;
+  position: absolute;
   display: grid;
   grid-template-columns: repeat(var(--column-quantity), 1fr);
   gap: var(--cell-gap);
   padding: var(--cell-gap);
 }
 
-.card {
+.cell {
   position: relative;
+  width: var(--card-width);
+  aspect-ratio: 5/7;
+  background-color: none;
+  border-style: solid;
+  border-width: var(--border-width);
+  border-color: var(--color-card-detail);
+  border-radius: var(--card-round);
+  color: var(--color-card-detail);
+}
+
+.card {
+  position: absolute;
   width: var(--card-width);
   aspect-ratio: 5/7;
   background-color: var(--color-cardstock);
@@ -70,9 +84,6 @@ div {
 }
 .card:active{
   cursor: grabbing;
-}
-.card * {
-  user-select: none;
 }
 .card[data-suit="spade"] {
   --color-card-detail: var(--color-spade);
