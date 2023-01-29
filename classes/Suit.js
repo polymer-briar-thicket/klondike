@@ -1,4 +1,4 @@
-export class Suit {
+export default class Suit {
   constructor(singular, plural, symbol_solid, symbol_outline, color) {
     this.name.singular = singular;
     this.name.plural = plural;

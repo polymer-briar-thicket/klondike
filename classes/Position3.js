@@ -1,4 +1,4 @@
-export class Position3 {
+export default class Position3 {
   constructor(x, y, z) {
     this.x = x;
     this.y = y;

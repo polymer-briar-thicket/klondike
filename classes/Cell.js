@@ -1,4 +1,4 @@
-export class Cell {
+export default class Cell {
   constructor(border) {
     this.dom.border = border;
     this.cards = [];

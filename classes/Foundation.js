@@ -1,4 +1,4 @@
-export class Foundation extends Cell {
+export default class Foundation extends Cell {
   constructor(border, suit) {
     super(border);
     this.g.symbol;

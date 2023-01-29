@@ -1,4 +1,4 @@
-export class Color {
+export default class Color {
   constructor(hue, saturation, lightness) {
     this.hue = hue;
     this.saturation = saturation;

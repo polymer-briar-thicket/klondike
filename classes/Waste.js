@@ -1,4 +1,4 @@
-export class Waste extends Cell {
+export default class Waste extends Cell {
   constructor(border) {
     super(border);
   }

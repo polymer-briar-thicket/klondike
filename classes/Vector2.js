@@ -1,4 +1,4 @@
-export class Vector2 {
+export default class Vector2 {
   constructor(angle, magnitude) {
     this.angle = angle;
     this.magnitude = magnitude;
