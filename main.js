@@ -1,13 +1,13 @@
-import Color from "classes/Color.js";
-import Game from "classes/Game.js"; // (cells[], cards[])
-import Suit from "classes/Suit.js"; // (singular, plural, symbol_solid, symbol_outline, color)
-import Value from "classes/Value.js"; // (singular, plural, rank, symbol)
-import Cell from "classes/Cell.js"; // (border)
-import Stock from "classes/Stock.js";
-import Waste from "classes/Waste.js";
-import Foundation from "classes/Foundation.js";
-import Tableau from "classes/Tableau.js";
-import Card from "classes/Card.js";
+import Color from "/classes/Color.js";
+import Game from "/classes/Game.js"; // (cells[], cards[])
+import Suit from "/classes/Suit.js"; // (singular, plural, symbol_solid, symbol_outline, color)
+import Value from "/classes/Value.js"; // (singular, plural, rank, symbol)
+import Cell from "/classes/Cell.js"; // (border)
+import Stock from "/classes/Stock.js";
+import Waste from "/classes/Waste.js";
+import Foundation from "/classes/Foundation.js";
+import Tableau from "/classes/Tableau.js";
+import Card from "/classes/Card.js";
 
 function PreventDefault(event) {
   event.preventDefault();
