@@ -11,10 +11,6 @@
   --color-background: hsl(0,0%,0%);
   --color-cardstock: hsl(0,0%,12%);
   --color-card-detail: hsl(0,0%,20%);
-  --color-spade: hsl(190, 100%, 40%);
-  --color-heart: hsl(32, 100%, 45%);
-  --color-club: hsl(190, 100%, 40%);
-  --color-diamond: hsl(32, 100%, 45%);
 
   /* fonts */
   --font-family-text: "Noto Serif JP", serif;
@@ -84,12 +80,6 @@ div {
 }
 .card:active{
   cursor: grabbing;
-}
-.card[data-suit="spade"] {
-  --color-card-detail: var(--color-spade);
-}
-.card[data-suit="heart"] {
-  --color-card-detail: var(--color-heart);
 }
 .index-value {
   position: absolute;
