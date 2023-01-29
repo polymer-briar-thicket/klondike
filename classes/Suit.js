@@ -3,7 +3,7 @@ export default class Suit {
     this.name = {
       "singular": singular,
       "plural": plural
-    }
+    };
     this.symbol_solid = symbol_solid;
     this.symbol_outline = symbol_outline;
     this.color = color;
