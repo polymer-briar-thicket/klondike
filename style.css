@@ -61,9 +61,9 @@ div {
   background-color: none;
   border-style: solid;
   border-width: var(--border-width);
-  border-color: var(--color-card-detail);
+  border-color: var(--color-cardstock);
   border-radius: var(--card-round);
-  color: var(--color-card-detail);
+  color: var(--color-cardstock);
 }
 
 .card {
