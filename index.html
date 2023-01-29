@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html onload="Main()">
+<html>
   <head>
     <meta name="viewport" content="width=device-width">
     <title>Klondike</title>
     <link rel="icon" type="image/x-icon" href="images/icon-72x72.png">
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="style.css">
-    <script type="module" src="main.js"></script>
 
     <link rel="apple-touch-icon" sizes="512x512" href="images/icon-512x512.png">
     <link rel="apple-touch-icon" sizes="384x384" href="images/icon-384x384.png">
@@ -17,7 +16,9 @@
     <link rel="apple-touch-icon" sizes="96x96" href="images/icon-96x96.png">
     <link rel="apple-touch-icon" sizes="72x72" href="images/icon-72x72.png">
   </head>
-  <body>
+  <body onload="Main()">
+    <script type="module" src="main.js"></script>
+
     <div id="grid">
       <div id="stock" class="cell"></div>
       <div id="waste" class="cell"></div>
