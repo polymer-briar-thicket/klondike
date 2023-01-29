@@ -68,5 +68,6 @@ function Main() {
       cards.push(new Card(suit, value));
     }
   }
+  console.log(cards);
 
 }
