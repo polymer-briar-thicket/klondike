@@ -1,3 +1,5 @@
+import Position3 from "./classes/Position3.js";
+import Vector2 from "./classes/Vector2.js";
 import Color from "./classes/Color.js";
 import Suit from "./classes/Suit.js"; // (singular, plural, symbol_solid, symbol_outline, color)
 import Value from "./classes/Value.js"; // (singular, plural, rank, symbol)

@@ -5,11 +5,11 @@ export class Cell {
   }
 
   get position() {
-    return {
-      "x": this.dom.border.getBoundingClientRect().left,
-      "y": this.dom.border.getBoundingClientRect().top,
-      "z": this.dom.border.style.zIndex;
-    };
+    return new Position3(
+      this.dom.border.getBoundingClientRect().left,
+      this.dom.border.getBoundingClientRect().top,
+      this.dom.border.style.zIndex
+    );
   }
 
   Place_Cards() {
