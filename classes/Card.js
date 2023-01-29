@@ -5,10 +5,12 @@ export default class Card {
     this.suit = suit;
     this.value = value;
 
-    this.dom.border = document.createElement("div");
-    this.dom.index_value = document.createElement("div");
-    this.dom.index_suit = document.createElement("div");
-    this.dom.suit = document.createElement("div");
+    this.dom = {
+      "border": document.createElement("div"),
+      "index_value": document.createElement("div"),
+      "index_suit": document.createElement("div"),
+      "suit": document.createElement("div")
+    };
   }
 
   get position() {
