@@ -62,9 +62,9 @@ function Main() {
   for (var suit of suits) {
     for(var value of values) {
       cards.push(new Card(suit, value));
+      console.log(value.name.singular + " of " + suit.name.singular);
     }
   }
-  console.log(cards);
 
 }
 
