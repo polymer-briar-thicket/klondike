@@ -67,3 +67,5 @@ function Main() {
   console.log(cards);
 
 }
+
+window.addEventListener('load', Main);
