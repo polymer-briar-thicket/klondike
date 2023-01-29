@@ -10,10 +10,6 @@ import Foundation from "./classes/Foundation.js";
 import Tableau from "./classes/Tableau.js";
 import Card from "./classes/Card.js";
 
-function PreventDefault(event) {
-  event.preventDefault();
-}
-
 function Main() {
 
   const colors = {
