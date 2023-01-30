@@ -1,4 +1,5 @@
 import Position3 from "./Position3.js";
+import DragHandler from "./DragHandler.js";
 
 export default class Card {
   constructor(suit, value) {
@@ -16,6 +17,8 @@ export default class Card {
     this.dom.card.classList.add("card");
     this.dom.card.style.borderColor = this.suit.color.hsl_string;
     this.dom.card.style.color = this.suit.color.hsl_string;
+
+    this.dom.card.addEventListener("ontouchstart", DragHandler.TouchStart(this.dom.card, event));
 
     this.dom.index_value.classList.add("index-value");
     this.dom.index_value.innerHTML = this.value.symbol;
@@ -52,5 +55,9 @@ export default class Card {
     if (position3.x != null) this.dom.card.style.left = position3.x;
     if (position3.y != null) this.dom.card.style.top = position3.y;
     if (position3.x != null) this.dom.card.style.zIndex = position3.z;
+  }
+
+  Move(position3) {
+    this.position = position3;
   }
 }
