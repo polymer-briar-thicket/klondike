@@ -8,7 +8,7 @@ export default class DragHandler {
       "x": 0,
       "y": 0
     };
-    this.element.addEventListener("touchstart", this.TouchStart);
+    this.element.addEventListener("touchstart", this.TouchStart.bind(this));
   }
 
   TouchStart(event) {
@@ -17,8 +17,8 @@ export default class DragHandler {
     this.offset.y = event.targetTouches[0].screenY - this.element.getBoundingClientRect().top;
 
     this.element.removeEventListener("touchstart", this.TouchStart);
-    this.element.addEventListener("touchmove", this.TouchMove);
-    this.element.addEventListener("touchend", this.TouchEnd);
+    this.element.addEventListener("touchmove", this.TouchMove.bind(this));
+    this.element.addEventListener("touchend", this.TouchEnd.bind(this));
   }
   TouchMove(event) {
     this.element.Move(new Position3(
@@ -28,7 +28,8 @@ export default class DragHandler {
     ));
   }
   TouchEnd() {
-    element.removeEventListener("touchmove", this.TouchMove);
-    element.removeEventListener("touchend", this.TouchEnd);
+    this.element.removeEventListener("touchmove", this.TouchMove);
+    this.element.removeEventListener("touchend", this.TouchEnd);
+    this.element.addEventListener("touchstart", this.TouchStart.bind(this));
   }
 }
