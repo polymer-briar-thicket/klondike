@@ -3,6 +3,7 @@ import Position3 from "./Position3.js";
 export default class DragHandler {
   constructor(element) {
     this.element = element;
+    console.log(this.element);
     this.offset = {
       "x": 0,
       "y": 0
@@ -12,10 +13,9 @@ export default class DragHandler {
 
   TouchStart(event) {
     console.log(event);
-    console.log(this.element);
     this.offset.x = event.targetTouches[0].screenX - this.element.getBoundingClientRect().left;
     this.offset.y = event.targetTouches[0].screenY - this.element.getBoundingClientRect().top;
-    
+
     this.element.removeEventListener("touchstart", this.TouchStart);
     this.element.addEventListener("touchmove", this.TouchMove);
     this.element.addEventListener("touchend", this.TouchEnd);

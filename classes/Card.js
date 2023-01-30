@@ -20,15 +20,14 @@ export default class Card {
 
     this.dom.index_value.classList.add("index-value");
     this.dom.index_value.innerHTML = this.value.symbol;
+    this.dom.card.appendChild(this.dom.index_value);
 
     this.dom.index_suit.classList.add("index-suit");
     this.dom.index_suit.innerHTML = this.suit.symbol;
+    this.dom.card.appendChild(this.dom.index_suit);
 
     this.dom.pip.classList.add("pip");
     this.dom.pip.innerHTML = this.suit.symbol;
-
-    this.dom.card.appendChild(this.dom.index_value);
-    this.dom.card.appendChild(this.dom.index_suit);
     this.dom.card.appendChild(this.dom.pip);
 
     document.body.appendChild(this.dom.card);
