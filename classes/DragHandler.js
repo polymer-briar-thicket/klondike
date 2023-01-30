@@ -12,10 +12,8 @@ export default class DragHandler {
   }
 
   TouchStart(event) {
-    console.log(event);
     this.offset.x = event.targetTouches[0].clientX - this.element.getBoundingClientRect().left;
     this.offset.y = event.targetTouches[0].clientY - this.element.getBoundingClientRect().top;
-    console.log("offset.x: " + this.offset.x + " | offset.y: " + this.offset.y);
 
     this.element.addEventListener("touchmove", this.touchmove);
     this.element.addEventListener("touchend", this.touchend);
