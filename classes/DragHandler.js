@@ -20,7 +20,6 @@ export default class DragHandler {
     this.element.addEventListener("touchcancel", this.touchend);
   }
   TouchMove(event) {
-    console.log(event.targetTouches[0].screenX - this.offset.x);
     this.element.style.left = (event.targetTouches[0].clientX - this.offset.x) + "px";
     this.element.style.top = (event.targetTouches[0].clientY - this.offset.y) + "px";
   }
