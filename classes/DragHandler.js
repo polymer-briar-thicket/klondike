@@ -1,9 +1,6 @@
-import Position3 from "./Position3.js";
-
 export default class DragHandler {
   constructor(element) {
     this.element = element;
-    console.log(this.element);
     this.offset = {
       "x": 0,
       "y": 0
@@ -21,11 +18,8 @@ export default class DragHandler {
     this.element.addEventListener("touchend", this.TouchEnd.bind(this));
   }
   TouchMove(event) {
-    this.element.Move(new Position3(
-      event.targetTouches[0].screenX - this.offset.x,
-      event.targetTouches[0].screenY - this.offset.y,
-      null
-    ));
+    this.element.style.left = event.targetTouches[0].screenX - this.offset.x;
+    this.element.style.top = event.targetTouches[0].screenY - this.offset.y;
   }
   TouchEnd() {
     this.element.removeEventListener("touchmove", this.TouchMove);
