@@ -18,8 +18,8 @@ export default class Card {
     this.dom.card.style.borderColor = this.suit.color.hsl_string;
     this.dom.card.style.color = this.suit.color.hsl_string;
 
-    this.dragHandler = new DragHandler();
-    this.dom.card.addEventListener("ontouchstart", dragHandler.TouchStart(this.dom.card, event));
+    this.drag_handler = new DragHandler();
+    this.dom.card.addEventListener("ontouchstart", this.drag_handler.TouchStart(this.dom.card, event));
 
     this.dom.index_value.classList.add("index-value");
     this.dom.index_value.innerHTML = this.value.symbol;
