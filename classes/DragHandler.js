@@ -15,6 +15,8 @@ export default class DragHandler {
     this.offset.x = event.targetTouches[0].clientX - this.element.getBoundingClientRect().left;
     this.offset.y = event.targetTouches[0].clientY - this.element.getBoundingClientRect().top;
 
+    this.element.style.zIndex += 200;
+
     this.element.addEventListener("touchmove", this.touchmove);
     this.element.addEventListener("touchend", this.touchend);
     this.element.addEventListener("touchcancel", this.touchend);
@@ -24,6 +26,8 @@ export default class DragHandler {
     this.element.style.top = (event.targetTouches[0].clientY - this.offset.y) + "px";
   }
   TouchEnd() {
+    this.element.style.zIndex += 200;
+
     this.element.removeEventListener("touchmove", this.touchmove);
     this.element.removeEventListener("touchend", this.touchend);
     this.element.removeEventListener("touchcancel", this.touchend);
