@@ -3,9 +3,10 @@
   src: url(NotoSerifJP-Black.otf);
 }
 
-* {
+:root, * {
   box-sizing: border-box;
   user-select: none;
+  pointer-events: none;
 
   /* colors */
   --color-background: hsl(0,0%,0%);
@@ -51,6 +52,7 @@ div {
 }
 
 .cell {
+  pointer-events: auto;
   position: relative;
   width: var(--card-width);
   aspect-ratio: 5/7;
@@ -63,6 +65,7 @@ div {
 }
 
 .card {
+  pointer-events: auto;
   position: absolute;
   width: var(--card-width);
   aspect-ratio: 5/7;
